@@ -6,12 +6,13 @@ body{
     display: flex;
     flex-flow: row nowrap;
     padding: 4px 16px;
-    width: 100%;
+    width: 97%;
     height: 44px;
     margin: 0px;
-    position: fixed;
+    position: fixed;    
+    /*align-items: center;*/
 }
-#navbar-pinterest .right-side .imgnav{
+#navbar-pinterest .side .imgnav{
     height: 24px;
     width: 24px;
     cursor: pointer;
@@ -19,17 +20,17 @@ body{
     padding: 10px; 
 }
 
-#navbar-pinterest .right-side .imgnav:hover{
+#navbar-pinterest .side .imgnav:hover{
     background-color: #8080807e;
 }
 
-.right-side{
+.side{
     display: flex;
     flex-flow: row;
     align-items: center;    
 }
 
-.right-side p{
+.side p{
     margin: 0px;
     border-radius: 22px;
     background-color: black;
@@ -42,7 +43,7 @@ body{
     cursor: pointer;
 }
 
-.right-side a{
+.side a{
     padding: 0px 10px;
     text-decoration: none;
     font: bold;
@@ -58,27 +59,51 @@ body{
 }
 
 .create{
-    box-sizing: 0px;
+    /*box-sizing: 0px;*/
     display: flex;
     flex-flow: row;
     flex: 0 0 auto;
 }
 
-.right-side .create p{
+.side .create p{
     background-color: white;
     color: #000;
     padding: 0 0 0 10px;
     align-self: end;
 }
 
-#navbar-pinterest .right-side .create img{
+#navbar-pinterest .side .create img{
     height: 8px;
     width: 12px;
     padding: 0px;
     margin-top: 4px;
 }
 
+.search{
+  height: 44px;
+  width: 100%;
+  /*flex-grow: 2;*/
+  display: flex;
+  flex-flow: row;
+  align-items: center;  
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;  
+  margin-left: 24px;
+  margin-right: 24px;
+  /*box-sizing: border-box;*/
+  background-color: #E9E9E9;
+}
+
 .search img{
+    margin-left: 10px;
     width: 12px;
     height: 12px;
 }
+
+form input[type="text"] {
+    width: 80%;    
+    border: none; 
+    outline: none;
+    font-size: 16px;
+    background-color: #E9E9E9;
+  }
