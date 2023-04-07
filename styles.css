@@ -12,8 +12,7 @@ body{
     height: 44px;
     margin: 0px;
     position: fixed;    
-    z-index: 700;
-    /*align-items: center;*/
+    z-index: 700;    
 }
 #navbar-pinterest .side .imgnav{
     height: 24px;
@@ -44,6 +43,7 @@ body{
     text-align: center;
     min-width: 60px;
     cursor: pointer;
+    font: bold;
 }
 
 .side a{
@@ -96,16 +96,14 @@ body{
 
 .search{
   height: 44px;
-  width: 100%;
-  /*flex-grow: 2;*/
+  width: 100%;  
   display: flex;
   flex-flow: row;
   align-items: center;  
   border: 1px solid #dfe1e5;
   border-radius: 24px;  
   margin-left: 24px;
-  margin-right: 24px;
-  /*box-sizing: border-box;*/
+  margin-right: 24px;  
   background-color: #E9E9E9;
 }
 
@@ -127,36 +125,134 @@ main{
     display: block;
 }
 
-#content{
-    box-sizing: border-box;
+#content{    
+    columns: 236px calc(1920/236);
+    column-gap: 8px;
     margin: 0 auto;
     position: relative;
-    padding-top: 84px;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
+    padding: 84px 30px 0px 30px;
+    justify-content: center;        
 }
 
 .card-image{
-    width: 236px;
+    position: relative;
+    width: 236px;    
     padding: 8px 8px;    
-    display: block;    
-    
+    display: flex;
+    flex: column;
+}
+.card-image-top{       
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 16px;    
 }
 
-.card-image img{
-    background-color: #E9E9E9;    
-    border-radius: 16px;    
-    color: transparent;
-    cursor: zoom-in;
-    height: auto;
+.card-image-top button{
+    background-color: #e60023;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 24px;
+    height: 48px;
+    width: 90px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 100;
+}
+
+.card-image-top button:hover{
+    background-color: #ad081b;
+}
+
+.imgcard {    
+    background-color: #E9E9E9;        
+    border-radius: 16px;        
+    cursor: zoom-in;    
     max-width: 100%;
+    max-height: 100%;
     vertical-align: middle;
+    position: relative;    
+    border-image: initial;
+    height: fit-content;
 }
 
 .card-image video{
+    border-radius: 16px;      
     cursor: zoom-in;
     object-fit: contain;
     overflow-clip-margin:  content-box;
     overflow: clip;
+    max-height: 236px;
+    max-width: 236px;
+}
+
+.card-image-bottom{
+    opacity: 90%;
+    display: none;
+    position: absolute;
+    right: 20px;
+    bottom: 16px;
+}
+
+.card-image-bottom button{
+    opacity: 80%;
+    height: 36px;
+    width: 36px;
+    background-color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.card-image-bottom button:hover{
+    opacity: 100%;
+}
+
+.image-bottom{
+    background-color: white;
+    cursor: pointer;    
+    height: 24px;
+    width: 24px;
+    
+}
+
+.card-image:hover .card-image-top{
+    display: block;
+}
+
+.card-image:hover .card-image-bottom{
+    display:block;
+}
+
+.card-image:hover .imgcard{
+    filter: brightness(0.5);
+}
+
+.card-image:hover video{
+    filter:brightness(0.5)
+}
+
+.more{
+    cursor: pointer;    
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 56px;
+    height: 56px;    
+    bottom: 30px;
+    right: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.more img{
+    width: 16px;
+    height: 24px;
+}
+
+.more:hover{
+    filter: brightness(0.8);
 }
